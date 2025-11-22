@@ -94,7 +94,7 @@ fn run(input: &str) -> i32 {
         .map_while(|instruction| me.r#move(instruction.split_at(1)))
         .collect::<Vec<_>>();
 
-    ((0 - me.x) + (0 - me.y)).abs()
+    me.x.abs() + me.y.abs()
 }
 
 #[cfg(test)]

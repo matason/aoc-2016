@@ -60,7 +60,7 @@ fn run(input: &str) -> i32 {
         })
         .collect::<Vec<_>>();
 
-    ((0 - me.x) + (0 - me.y)).abs()
+    me.x.abs() + me.y.abs()
 }
 
 #[cfg(test)]
