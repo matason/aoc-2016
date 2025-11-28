@@ -11,14 +11,12 @@ fn run(input: &str) -> i32 {
                 .map(|side| side.parse::<i32>().unwrap())
                 .collect::<Vec<_>>()
         })
-        .into_iter()
         .filter(|line| {
             line[0] + line[1] > line[2]
                 && line[1] + line[2] > line[0]
                 && line[2] + line[0] > line[1]
         })
         .collect::<Vec<_>>();
-
     triangles.len().try_into().unwrap()
 }
 
