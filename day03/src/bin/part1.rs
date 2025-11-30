@@ -4,7 +4,7 @@ fn main() {
 }
 
 fn run(input: &str) -> i32 {
-    let triangles = input
+    input
         .lines()
         .map(|line| {
             line.split_whitespace()
@@ -16,8 +16,9 @@ fn run(input: &str) -> i32 {
                 && line[1] + line[2] > line[0]
                 && line[2] + line[0] > line[1]
         })
-        .collect::<Vec<_>>();
-    triangles.len().try_into().unwrap()
+        .count()
+        .try_into()
+        .unwrap()
 }
 
 #[cfg(test)]
